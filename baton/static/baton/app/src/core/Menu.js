@@ -200,13 +200,15 @@ let Menu = {
     container.insertAfter('#user-tools')
     let userInfo = $('<div />', { class: 'user-info' })
       .html(
-        '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div><div>' +
+        '<div>' +
           $('#user-tools .dropdown-toggle').text() +
           '</div>'
       )
       .appendTo(container)
     // gravatar
     if (this.gravatarEnabled) {
+      let gravatarSpinner = $('<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>')
+      userInfo.prepend(gravatarSpinner)
       $.getJSON(this.gravatarUrl, function (data) {
         let img = $('<img />', {
           class: 'gravatar-icon',
@@ -214,7 +216,7 @@ let Menu = {
             .replace('{hash}', data.hash)
             .replace('{default}', self.gravatarDefaultImg)
         })
-        userInfo.find('.spinner-border').replaceWith(img)
+        gravatarSpinner.replaceWith(img)
         if (self.collapsableUserArea) {
           img.after(expandUserArea)
         }
@@ -226,7 +228,7 @@ let Menu = {
             .replace('{hash}', '')
             .replace('{default}', self.gravatarDefaultImg)
         })
-        userInfo.find('.spinner-border').replaceWith(img)
+        gravatarSpinner.replaceWith(img)
         if (self.collapsableUserArea) {
           img.after(expandUserArea)
         }
