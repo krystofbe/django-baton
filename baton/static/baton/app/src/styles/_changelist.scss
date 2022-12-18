@@ -96,10 +96,12 @@
 
   #toolbar {
     @extend .mb-0;
+    @extend .mt-2;
     @extend .p-3;
     @include make-col(12);
     background: $toolbar-bg;
     order: 1;
+    border-radius: 12px;
   }
 
   #changelist-search {
@@ -145,7 +147,7 @@
 
   .changelist-filter-toggler {
     @extend .btn;
-    @extend .btn-info;
+    @extend .btn-outline-info;
     align-items: center;
     cursor: pointer;
     display: inline;
@@ -337,7 +339,6 @@
       button {
         @extend .btn;
         @extend .btn-sm;
-        @extend .btn-light;
         @extend .ms-2;
         @extend .me-2;
       }
@@ -394,6 +395,9 @@
       th,
       td {
         padding: .3rem;
+      }
+      th a {
+        font-weight: 600;
       }
     }
 

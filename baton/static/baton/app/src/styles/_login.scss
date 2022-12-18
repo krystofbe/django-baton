@@ -7,6 +7,9 @@ body.login {
   justify-content: center;
   padding: 1px 1rem 0;
 
+  #header {
+    border-radius: 25px;
+  }
   #header #branding {
     margin: auto !important;
   }
@@ -38,7 +41,7 @@ body.login {
 
       input {
         @extend .btn;
-        @extend .btn-secondary;
+        @extend .btn-primary;
         display: inline-block;
       }
     }
@@ -64,7 +67,7 @@ body.login {
       color: $password-visibility-toggler-icon-fg;
       cursor: pointer;
       position: absolute;
-      right: 8px;
+      right: 16px;
       top: 11px;
       z-index: 10;
     }

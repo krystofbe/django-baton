@@ -395,6 +395,7 @@
   input[type=email],
   input[type=date],
   input[type=file],
+  input[type=tel],
   select[multiple] {
     @extend .form-control;
 
@@ -537,6 +538,7 @@
     flex-basis: baseline;
     flex-direction: column;
     margin-top: 15px;
+    margin-bottom: 15px;
 
     @include media-breakpoint-up(md) {
       flex-direction: row-reverse;
@@ -549,7 +551,7 @@
       margin-bottom: 15px;
       margin-left: auto;
       order: 1;
-      width: 200px;
+      min-width: 200px;
 
       @include media-breakpoint-up(md) {
         margin-bottom: 0;
@@ -617,6 +619,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      
 
       &::after {
         color: $collapse-entry-icon-color;
@@ -644,7 +647,8 @@
 
   fieldset > h2 {
     background: $fieldset-title-bg;
-    font-size: $h2-size;
+    color: white;
+    font-size: 1rem;
     margin-bottom: 0;
     padding: 5px 10px;
 
@@ -655,7 +659,7 @@
 
   .inline-related {
     overflow-x: auto;
-
+    border-radius: 8px;
     &.empty-form, // stacked inline
     .empty-form { // tabular
       display: none !important; // inline extra param

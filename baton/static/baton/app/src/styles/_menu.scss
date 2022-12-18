@@ -36,7 +36,6 @@ body:not(.menu-mobile) {
 
   #branding {
     background: $menu-branding-bg;
-    border-bottom: 1px solid $menu-branding-bg;
     padding-top: 0;
     text-align: center;
     width: 100%;
@@ -68,7 +67,7 @@ body:not(.menu-mobile) {
 
     .user-links {
       height: 38px;
-      transition: height .2s linear;
+      transition: height 0.2s linear;
     }
 
     .user-area-toggler {
@@ -100,7 +99,7 @@ body:not(.menu-mobile) {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      margin-top: .5rem;
+      margin-top: 0.5rem;
     }
 
     a {
@@ -108,13 +107,13 @@ body:not(.menu-mobile) {
 
       &.view-site {
         &::after {
-          content: '\f390';
+          content: "\f390";
           @extend %font-awesome-family;
         }
 
-        &[href*=doc] {
+        &[href*="doc"] {
           &::after {
-            content: '\f02d' !important;
+            content: "\f02d" !important;
             @extend %font-awesome-family;
           }
         }
@@ -122,7 +121,7 @@ body:not(.menu-mobile) {
 
       &.password {
         &::after {
-          content: '\f084';
+          content: "\f084";
           @extend %font-awesome-family;
         }
       }
@@ -132,22 +131,23 @@ body:not(.menu-mobile) {
         display: inline-block;
 
         &::after {
-          content: '\f2f5';
+          content: "\f2f5";
           @extend %font-awesome-family;
+          font-size: 1.6rem;
         }
       }
 
       &::after {
         color: $user-links-fg;
-        font-size: 1.3rem;
+        font-size: 1rem;
         display: inline-block;
-        margin: 0 .6rem;
+        margin: 0 0.6rem;
       }
     }
   }
 
   .search-field-tool {
-    margin: .5rem 1rem;
+    margin: 0.5rem 1rem;
     position: relative;
 
     input {
@@ -164,17 +164,17 @@ body:not(.menu-mobile) {
 
     &::after {
       color: $secondary;
-      content: '\f002';
+      content: "\f002";
       @extend %font-awesome-family;
       position: absolute;
-      right: .5rem;
-      top: .2rem;
+      right: 0.5rem;
+      top: 0.2rem;
     }
 
     &.loading {
       &::after {
         animation: fa-spin 2s linear infinite;
-        content: '\f1ce';
+        content: "\f1ce";
       }
     }
 
@@ -191,11 +191,11 @@ body:not(.menu-mobile) {
         cursor: pointer;
         display: flex;
         flex-direction: row;
-        font-size: .9rem;
+        font-size: 0.9rem;
         justify-content: space-between;
         max-height: 50vh;
         overflow: auto;
-        padding: .5rem;
+        padding: 0.5rem;
 
         &.selected {
           background: $search-field-selected-bg;
@@ -204,7 +204,6 @@ body:not(.menu-mobile) {
           a {
             color: $search-field-selected-color;
           }
-
         }
 
         a {
@@ -214,7 +213,7 @@ body:not(.menu-mobile) {
 
         i {
           color: $search-field-icon-color;
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
       }
     }
@@ -261,7 +260,6 @@ body:not(.menu-mobile) {
     width: 100%;
     z-index: 10;
 
-
     @include media-breakpoint-up(lg) {
       height: auto;
       padding-top: 0;
@@ -286,6 +284,7 @@ body:not(.menu-mobile) {
 
       &:hover {
         color: $menu-link-hover-color;
+        background-color: $menu-link-hover-bg;
         text-decoration: none;
       }
 
@@ -294,7 +293,7 @@ body:not(.menu-mobile) {
 
         &::after {
           @extend %font-awesome;
-          content: '\f105';
+          content: "\f105";
           float: right;
         }
       }
@@ -327,14 +326,14 @@ body:not(.menu-mobile) {
   .depth-1 {
     display: block;
     margin-left: -100%;
-    transition: margin-left .0s linear;
+    transition: margin-left 0s linear;
 
     @include media-breakpoint-up(lg) {
       display: none;
       margin-left: 0;
 
       li {
-        padding-left: 10px;
+        padding-left: 32px;
       }
     }
   }
@@ -345,12 +344,11 @@ body:not(.menu-mobile) {
     }
   }
 
-
   .open {
     @include media-breakpoint-up(lg) {
       .has-children {
         &::after {
-          content: '\f107' !important;
+          content: "\f107" !important;
         }
       }
 
@@ -374,7 +372,7 @@ body:not(.menu-mobile) {
     @include media-breakpoint-up(lg) {
       .has-children {
         &::after {
-          content: '\f107' !important;
+          content: "\f107" !important;
         }
       }
 
@@ -406,13 +404,14 @@ body:not(.menu-mobile) {
     @include media-breakpoint-up(lg) {
       .has-children {
         &::after {
-          content: '\f107' !important;
+          content: "\f107" !important;
         }
       }
 
       ul,
       li {
         background: $menu-selected-sub-bg;
+        color: $menu-active-voice-color;
       }
 
       > .depth-1 {
@@ -429,10 +428,12 @@ body:not(.menu-mobile) {
   .active:not(.with-active) {
     @include media-breakpoint-up(lg) {
       background: $menu-active-voice-bg !important;
+
       border-left: 5px solid $menu-active-voice-border-color;
       position: relative;
 
       a {
+        color: $menu-active-voice-color;
         margin-left: -5px;
       }
     }

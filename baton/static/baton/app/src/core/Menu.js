@@ -20,7 +20,7 @@ let Menu = {
     this.fixNodes()
     this.brandingClone = $('#branding').clone()
     this.manageBrandingUserTools()
-    this.manageSearchField()
+    // this.manageSearchField()
     this.fetchData()
     this.setHeight()
     let self = this
@@ -186,38 +186,38 @@ let Menu = {
       container.addClass('collapsed')
     }
     container.insertAfter('#user-tools')
-    let userInfo = $('<div />', { class: 'user-info' })
-      .html(
-        '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div><div>' +
-          $('#user-tools .dropdown-toggle').text() +
-          '</div>'
-      )
-      .appendTo(container)
-    // gravatar
-    $.getJSON(this.gravatarUrl, function (data) {
-      let img = $('<img />', {
-        class: 'gravatar-icon',
-        src: 'https://www.gravatar.com/avatar/{hash}?s=50&d={default}'
-          .replace('{hash}', data.hash)
-          .replace('{default}', self.gravatarDefaultImg)
-      })
-      userInfo.find('.spinner-border').replaceWith(img)
-      if (self.collapsableUserArea) {
-        img.after(expandUserArea)
-      }
-    }).fail(function (err) {
-      console.error(err.responseText)
-      let img = $('<img />', {
-        class: 'gravatar-icon',
-        src: 'https://www.gravatar.com/avatar/{hash}?s=50&d={default}'
-          .replace('{hash}', '')
-          .replace('{default}', self.gravatarDefaultImg)
-      })
-      userInfo.find('.spinner-border').replaceWith(img)
-      if (self.collapsableUserArea) {
-        img.after(expandUserArea)
-      }
-    })
+    // let userInfo = $('<div />', { class: 'user-info' })
+    //   .html(
+    //     '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div><div>' +
+    //       $('#user-tools .dropdown-toggle').text() +
+    //       '</div>'
+    //   )
+    //   .appendTo(container)
+    // disable gravatar
+    // $.getJSON(this.gravatarUrl, function (data) {
+    //   let img = $('<img />', {
+    //     class: 'gravatar-icon',
+    //     src: 'https://www.gravatar.com/avatar/{hash}?s=50&d={default}'
+    //       .replace('{hash}', data.hash)
+    //       .replace('{default}', self.gravatarDefaultImg)
+    //   })
+    //   userInfo.find('.spinner-border').replaceWith(img)
+    //   if (self.collapsableUserArea) {
+    //     img.after(expandUserArea)
+    //   }
+    // }).fail(function (err) {
+    //   console.error(err.responseText)
+    //   let img = $('<img />', {
+    //     class: 'gravatar-icon',
+    //     src: 'https://www.gravatar.com/avatar/{hash}?s=50&d={default}'
+    //       .replace('{hash}', '')
+    //       .replace('{default}', self.gravatarDefaultImg)
+    //   })
+    //   userInfo.find('.spinner-border').replaceWith(img)
+    //   if (self.collapsableUserArea) {
+    //     img.after(expandUserArea)
+    //   }
+    // })
     let linksContainer = $('<div />', { class: 'user-links' }).appendTo(
       container
     )

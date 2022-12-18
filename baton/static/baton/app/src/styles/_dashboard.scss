@@ -31,7 +31,7 @@
       }
 
       @media(min-width: 1600px) {
-        @include make-col(4);
+        @include make-col(6);
       }
     }
 
@@ -47,6 +47,7 @@
 
       th {
         width: 100%;
+        font-weight: 600;
       }
 
       td {
@@ -95,9 +96,11 @@
     background: $dashboard-caption-bg;
     border: 1px solid $dashboard-module-border-color;
     caption-side: top;
+    border-radius: 8px;
 
     a {
       color: $dashboard-caption-color;
+      font-weight: 600;
     }
   }
 

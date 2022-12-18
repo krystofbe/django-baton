@@ -28,7 +28,7 @@
     @extend .p-3;
     background: $dashboard-title-bg;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
 
     + h2,
     + .messagelist + h2 {
@@ -52,7 +52,7 @@
 
     a {
       @extend .btn;
-      @extend .btn-secondary;
+      @extend .btn-primary;
 
       &::before {
         @extend %font-awesome;

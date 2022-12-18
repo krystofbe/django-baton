@@ -76,17 +76,17 @@ window.Baton = {
     })
   },
   page: function () {
-    if (/^(\/[a-z]{2})?\/admin\/$/.test(location.pathname)) {
+    if (/^(\/[a-z]{2})?\/verwaltung\/$/.test(location.pathname)) {
       return 'dashboard'
-    } else if (/^(\/[a-z]{2})?\/admin\/doc\//.test(location.pathname)) {
+    } else if (/^(\/[a-z]{2})?\/verwaltung\/doc\//.test(location.pathname)) {
       return 'admindocs'
-    } else if (/^(\/[a-z]{2})?\/admin\/login\/$/.test(location.pathname)) {
+    } else if (/^(\/[a-z]{2})?\/verwaltung\/login\/$/.test(location.pathname)) {
       return 'login'
-    } else if (/^(\/[a-z]{2})?\/admin\/logout\/$/.test(location.pathname)) {
+    } else if (/^(\/[a-z]{2})?\/verwaltung\/logout\/$/.test(location.pathname)) {
       return 'logout'
-    } else if (/^(\/[a-z]{2})?\/admin\/password_change\/$/.test(location.pathname)) {
+    } else if (/^(\/[a-z]{2})?\/verwaltung\/password_change\/$/.test(location.pathname)) {
       return 'password_change'
-    } else if (/^(\/[a-z]{2})?\/admin\/password_change\/done\/$/.test(location.pathname)) {
+    } else if (/^(\/[a-z]{2})?\/verwaltung\/password_change\/done\/$/.test(location.pathname)) {
       return 'password_change_success'
     } else if (/\/add\//.test(location.pathname)) {
       return 'add_form'
