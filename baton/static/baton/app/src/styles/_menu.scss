@@ -133,7 +133,6 @@ body:not(.menu-mobile) {
         &::after {
           content: "\f2f5";
           @extend %font-awesome-family;
-          font-size: 1.6rem;
         }
       }
 
