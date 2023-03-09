@@ -1,15 +1,15 @@
-# blackbox modifications
+Blackbox Modifications for Django-Baton Django Admin
+----------------------------------------------------
 
-to-recompile run:
+To recompile, run the following command. After recompiling, set the `$PROJECT_PATH` environment variable to the path of your project, replacing `modulu-backend` with your project name. Finally, copy the `baton.min.js` file to your project's static directory.
 
-```
-cd baton/static/baton/app
-npm install
-npm run compile
-```
-
-copy the baton.min.js file to your project: e.g.
 
 ````
-cp dist/baton.min.js ../../../../../django/modulu-backend/static/baton/baton.min.js
-````
+#!/bin/bash
+
+export PROJECT_PATH=../django/modulu-backend
+(cd baton/static/baton/app && npm install && npm run compile)
+cp baton/static/baton/app/dist/baton.min.js $PROJECT_PATH/static/baton/baton.min.js
+
+```
+
