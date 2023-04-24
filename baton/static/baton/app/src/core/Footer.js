@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-let Footer = {
+const Footer = {
   /**
    * Footer component
    *
@@ -10,8 +10,8 @@ let Footer = {
     // $('#footer').appendTo('#content')
     // if (opts.remove) {
       $('#footer').remove()
-    // }
-  }
+    }
+  },
 }
 
 export default Footer

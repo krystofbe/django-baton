@@ -2,7 +2,7 @@
 {% load static baton_tags %}
 {% load i18n %}
 
-{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock title %}
 
 {% block extrahead %}
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -10,15 +10,21 @@
     <!-- <script src="http://localhost:8080/static/baton/app/dist/baton.min.js"></script> -->
     {% baton_config as conf %}
     {{ conf | json_script:"baton-config" }}
-    <script src="{% static 'baton/js_snippets/init_baton.js' %}"></script>
-{% endblock %}
+    <script>
+        (function ($, undefined) {
+            $(document).ready(function () {
+                Baton.init(JSON.parse(document.getElementById('baton-config').textContent));
+            })
+        })(jQuery, undefined)
+    </script>
+{% endblock extrahead %}
 
 {% block branding %}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
-{% endblock %}
+{% endblock branding %}
 
-{% block nav-global %}{% endblock %}
+{% block nav-global %}{% endblock nav-global %}
 
 {% block footer %}
     {% footer %}
-{% endblock %}
+{% endblock footer %}
