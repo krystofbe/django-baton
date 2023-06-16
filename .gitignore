@@ -14,3 +14,4 @@ tags.temp
 django_baton.egg-info/
 .ropeproject
 .virtualenv
+baton/static/baton/app/dist/
