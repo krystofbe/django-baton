@@ -10,8 +10,8 @@ const Footer = {
     // $('#footer').appendTo('#content')
     // if (opts.remove) {
       $('#footer').remove()
-    }
-  },
+    // }
+  }
 }
 
 export default Footer

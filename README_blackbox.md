@@ -8,7 +8,7 @@ To recompile, run the following command. After recompiling, set the `$PROJECT_PA
 #!/bin/bash
 
 export PROJECT_PATH=../django/modulu-backend
-(cd baton/static/baton/app && npm install && npm run compile)
+(cd baton/static/baton/app && yarn && yarn compile)
 cp baton/static/baton/app/dist/baton.min.js $PROJECT_PATH/static/baton/baton.min.js
 
 ```
